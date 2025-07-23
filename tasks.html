@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
-<body style="flex-direction: column;">
+<body>
     <div id="sidebar-placeholder" hx-get="aside.html" hx-swap="outerHTML" hx-trigger="load"></div>
 
-    <div class="container">
+    <div class="container" width="70%">
         <div id="task-form" class="card" style="display: none;">
             <form id="add-task-form">
                 <input type="text" name="title" placeholder="Task Title" required />
