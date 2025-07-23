@@ -1,0 +1,263 @@
+
+html {
+    font-size: medium;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #e0f7ff 13%, #ffdeec 43%, #fcffd1 76%, #ccfcca 100%);
+    font-family: sans-serif;
+    min-height: 100vh;
+    display: flex;
+}
+
+.sidebar {
+    position: fixed;
+    width: 220px;
+    background-color: rgba(255, 255, 255, 0.801);
+    border-radius: 12px;
+    margin: 1rem;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sidebar-menu {
+    list-style: none;
+}
+
+.sidebar-menu li {
+    margin-bottom: 0.5rem;
+    color: black;
+}
+
+.sidebar-menu a {
+    display: block;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.2s;
+}
+
+.sidebar-menu a:hover {
+    background: #f0f0f0;
+}
+
+.sidebar-menu a.active {
+    background: black;
+    color: white;
+}
+
+.sidebar-footer a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.6rem 1rem;
+    color: black;
+    text-decoration: none;
+}
+
+.sidebar-footer a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    flex: 1;
+    margin: 1rem 1rem 1rem 250px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    background: white;
+    border-radius: 20px;
+}
+
+.search-bar {
+    max-width: 500px;
+    padding: 0.6rem 1rem;
+    border-radius: 15px;
+    background: #F0F1F3;
+    border: 1px solid #F0F1F3;
+    color: black;
+    margin: 15px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.4rem 0.8rem;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.card {
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.801);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+}
+
+.task-card {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.btn {
+    border-radius: 50px;
+    border: 1px solid grey;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.75rem;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.badge.green {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.badge.orange {
+    background-color: #ffe8cc;
+    color: #92400e;
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 0.4rem 0.5rem;
+}
+
+.th {
+    border-style: none;
+    background: transparent;
+}
+
+.bg-transparent {
+    background: transparent;
+}
+
+.circle.green {
+    background: #B6FA82;
+}
+.circle.orange {
+    background: #FB6D39;
+}
+.circle.gray {
+    background: #cbd5e1;
+}
+
+.schedule-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.teacher-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 10%;
+}
+
+.progress-wrapper {
+  display: flex;
+  align-items: center;
+  height: 24px;
+  margin: 1rem 0;
+}
+
+.progress-filled {
+  height: 100%;
+  border-radius: 8px;
+}
+
+.progress-filled.orange {
+  background-color: #ff6f2c;
+  width: 40%;
+  margin-right: 5px;
+}
+
+.progress-filled.green {
+  background-color: #b6fa82;
+  width: 100%;
+  margin-right: 8px;
+}
+
+.progress-remaining {
+  flex: 1;
+  height: 100%;
+  border-radius: 8px;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #ddd,
+    #ddd 5px,
+    transparent 5px,
+    transparent 10px
+  );
+}
+
+.profile-pict {
+    width: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0px 50px;
+}
+
+@media (max-width: 900px) {
+    body {
+    flex-direction: column;
+    }
+
+    .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow-x: auto;
+    }
+
+    .container {
+    margin: 1rem;
+    }
+
+    .grid-2,
+    .grid-3 {
+    grid-template-columns: 1fr;
+    }
+}

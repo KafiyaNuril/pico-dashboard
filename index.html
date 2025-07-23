@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html data-theme="light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>UpGradely Dashboard</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+        >
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div id="sidebar-placeholder" hx-get="aside.html" hx-swap="outerHTML" hx-trigger="load"></div>
+
+        <main class="container">
+            <div class="topbar">
+                <input type="search" class="search-bar" placeholder="Search..." />
+                <div class="profile">
+                    <a href="profile.html" style="text-decoration: none; color: inherit;">
+                        <span>Kafiya Nuril</span>
+                        <img src="https://i.pinimg.com/736x/23/18/d0/2318d0b6c7cf0c4ccc30062dbfba8f01.jpg" class="avatar" alt="User Avatar" />
+                    </a>
+                    <div role="button" style="background: none; border-radius: 99px; border: 1px solid #d5d5d5;padding: 5px 9px; color: black;"><i class="fa-regular fa-bell"></i></div>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div>
+                    <div class="grid-2">
+                        <div class="card">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 style="font-weight: 500; color: black;">GPA</h4>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+                            <p style="font-size: 2rem"><strong>4.7</strong> <span class="badge green">High</span></p>
+                            <small>Your performance has increased by 2%</small>
+                        </div>
+                        <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 style="font-weight: 500; color: black;">On-time Rate</h4>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+                        <p style="font-size: 2rem"><strong>96%</strong> <span class="badge green">High</span></p>
+                        <small>Your scores have increased by 12%</small>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <h4 style="font-weight: 500; color: black;">My Tasks</h4>
+                            <div role="button" style="background: none; border-radius: 99px; border: 1px solid #d5d5d5; padding: 5px 9px; color: black;"><i class="fa-solid fa-plus"></i></div>
+                        </div>                        
+                        <div style="margin-bottom: 1rem;">
+                            <button class="btn contrast" hx-get="tasks/all.html" hx-target="#task-list" hx-swap="innerHTML">All tasks</button>
+                            <button class="btn outline contrast" hx-get="tasks/todo.html" hx-target="#task-list" hx-swap="innerHTML">To do</button>
+                            <button class="btn outline contrast" hx-get="tasks/progress.html" hx-target="#task-list" hx-swap="innerHTML">In progress</button>
+                            <button class="btn outline contrast" hx-get="tasks/done.html" hx-target="#task-list" hx-swap="innerHTML">Done</button>
+                        </div>
+
+                        <div id="task-list">
+                            <div>
+                                <div class="task-card">
+                                    <div style="display: flex; flex-direction: column;">
+                                        <abbr>Conduct a virtual experiment</abbr>
+                                        <small>Chemistry <br/> Jun 8</small>
+                                    </div>
+                                    <div style="display: flex; flex-direction: column;">
+                                        <button style="background-color: #70D7FF; color: white; padding: 8px 15px; border: none; border-radius: 20px;">To do</button>
+                                        <small>7 comments</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="task-card">
+                                    <div style="display: flex; flex-direction: column;">
+                                        <abbr>Complete a term-matching taskt</abbr>
+                                        <small>Biology <br /> Jun 3</small><br/>
+                                    </div>
+                                    <button style="background-color: #fd8a60; color: white; padding: 8px 15px; border: none; border-radius: 20px;">In Progress</button>
+                                </div>
+                                <div class="progress-wrapper">
+                                    <div class="progress-filled orange" style="width: 20%;"></div>
+                                    <div class="progress-remaining"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="task-card">
+                                    <div style="display: flex; flex-direction: column;">
+                                        <abbr>Study the influence of cultural traditions</abbr>
+                                        <small>Art History <br /> Jun 2</small><br/>
+                                    </div>
+                                    <button style="background-color: #fd8a60; color: white; padding: 8px 15px; border: none; border-radius: 20px;">In Progress</button>
+                                </div>
+                                <div class="progress-wrapper">
+                                    <div class="progress-filled green" style="width: 70%;"></div>
+                                    <div class="progress-remaining"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="contrast" style="border-radius: 20px; width: 100%;">view all tasks</button>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="card">
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <h4 style="font-weight: 500; color: black;">Class Attendance</h4>
+                            <details class="dropdown">
+                                <summary role="button" class="btn contrast">
+                                    Month
+                                </summary>
+                                <ul>
+                                    <li>Month</li>
+                                </ul>
+                            </details>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="th">Mon</th>
+                                    <th class="th">Tue</th>
+                                    <th class="th">Wed</th>
+                                    <th class="th">Thu</th>
+                                    <th class="th">Fri</th>
+                                    <th class="th">Sat</th>
+                                    <th class="th">Sun</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="th"></td>
+                                    <td class="th"><span class="circle green"><i class="fa-solid fa-check"></i></span></td>
+                                    <td class="th"><span class="circle green"><i class="fa-solid fa-check"></i></span></td>
+                                    <td class="th"><span class="circle green"><i class="fa-solid fa-check"></i></span></td>
+                                    <td class="th"><span class="circle green"><i class="fa-solid fa-check"></i></span></td>
+                                    <td class="th"><span class="circle gray"><i class="fa-solid fa-xmark"></i></span></td>
+                                    <td class="th"><span class="circle gray"><i class="fa-solid fa-xmark"></i></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="th"><span class="circle orange"><i class="fa-solid fa-xmark"></i></span></td>
+                                    <td class="th"><span class="circle green"><i class="fa-solid fa-check"></i></span></td>
+                                    <td class="th"><span class="circle green"><i class="fa-solid fa-check"></i></span></td>
+                                    <td class="th"><span class="circle green"><i class="fa-solid fa-check"></i></span></td>
+                                    <td class="th"><span class="circle green"><i class="fa-solid fa-check"></i></span></td>
+                                    <td class="th"><span class="circle gray"><i class="fa-solid fa-xmark"></i></span></td>
+                                    <td class="th"><span class="circle gray"><i class="fa-solid fa-xmark"></i></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="th"><span class="circle green"><i class="fa-solid fa-check"></i></span></td>
+                                    <td class="th"><span class="circle green"><i class="fa-solid fa-check"></i></span></td>
+                                    <td class="th"><span class="circle green"><i class="fa-solid fa-check"></i></span></td>
+                                    <td class="th"><span class="circle green"><i class="fa-solid fa-check"></i></span></td>
+                                    <td class="th"><span class="circle green"><i class="fa-solid fa-check"></i></span></td>
+                                    <td class="th"><span class="circle gray"><i class="fa-solid fa-xmark"></i></span></td>
+                                    <td class="th"><span class="circle gray"><i class="fa-solid fa-xmark"></i></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="th"><span class="circle green"><i class="fa-solid fa-check"></i></span></td>
+                                    <td class="th"><span class="circle green"><i class="fa-solid fa-check"></i></span></td>
+                                    <td class="th"><span class="circle green"><i class="fa-solid fa-check"></i></span></td>
+                                    <td class="th"><span class="circle green"><i class="fa-solid fa-check"></i></span></td>
+                                    <td class="th"><span class="circle green"><i class="fa-solid fa-check"></i></span></td>
+                                    <td class="th"><span class="circle gray"><i class="fa-solid fa-xmark"></i></span></td>
+                                    <td class="th"><span class="circle gray"><i class="fa-solid fa-xmark"></i></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="th"><span class="circle green"><i class="fa-solid fa-check"></i></span></td>
+                                    <td class="th"><span class="circle green"><i class="fa-solid fa-check"></i></span></td>
+                                    <td class="th"><span class="circle green"><i class="fa-solid fa-check"></i></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <article class="card">
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <h4 style="font-weight: 500; color: black;">My Schedule</h4>
+                            <details class="dropdown">
+                                <summary role="button" class="btn contrast">
+                                    Today
+                                </summary>
+                                <ul>
+                                    <li>Today</li>
+                                </ul>
+                            </details>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="bg-transparent">Time</th>
+                                    <th class="bg-transparent">Subject</th>
+                                    <th class="bg-transparent">Teacher</th>
+                                    <th class="bg-transparent">Room</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="bg-transparent">8:20</td>
+                                    <td class="bg-transparent">Biology</td>
+                                    <td class="bg-transparent">
+                                    <img src="https://i.pravatar.cc/100?img=11" alt="Terry Melton" style="width: 24px; border-radius: 50%; vertical-align: middle; margin-right: 0.5rem;" />
+                                    Terry Melton
+                                    </td>
+                                    <td class="bg-transparent">B2 R.120</td>
+                                </tr>
+                                <tr>
+                                    <td class="bg-transparent">9:00</td>
+                                    <td class="bg-transparent">Chemistry</td>
+                                    <td class="bg-transparent">
+                                    <img src="https://i.pravatar.cc/100?img=12" alt="Olive Castillo" style="width: 24px; border-radius: 50%; vertical-align: middle; margin-right: 0.5rem;" />
+                                    Olive Castillo
+                                    </td>
+                                    <td class="bg-transparent">B2 R.124</td>
+                                </tr>
+                                <tr>
+                                    <td class="bg-transparent">10:00</td>
+                                    <td class="bg-transparent">Literature</td>
+                                    <td class="bg-transparent">
+                                    <img src="https://i.pravatar.cc/100?img=13" alt="Jeremy Curry" style="width: 24px; border-radius: 50%; vertical-align: middle; margin-right: 0.5rem;" />
+                                    Jeremy Curry
+                                    </td>
+                                    <td class="bg-transparent">B5 R.223</td>
+                                </tr>
+                                <tr>
+                                    <td class="bg-transparent">10:55</td>
+                                    <td class="bg-transparent">Art History</td>
+                                    <td class="bg-transparent">
+                                    <img src="https://i.pravatar.cc/100?img=14" alt="Eleanor Padilla" style="width: 24px; border-radius: 50%; vertical-align: middle; margin-right: 0.5rem;" />
+                                    Eleanor Padilla
+                                    </td>
+                                    <td class="bg-transparent">B4 R.178</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article> 
+                </div>
+            </div>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.6/dist/htmx.min.js" integrity="sha384-Akqfrbj/HpNVo8k11SXBb6TlBWmXXlYQrCSqEWmyKJe+hDm3Z/B2WVG4smwBkRVm" crossorigin="anonymous"></script>
+    </body>
+
+</html>

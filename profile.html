@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="sidebar-placeholder" hx-get="aside.html" hx-swap="outerHTML" hx-trigger="load"></div>
+    <div class="container">
+        <div class="card" >
+            <h4 style="color: black;">Profile</h4>
+            <img class="profile-pict" src="https://i.pinimg.com/736x/23/18/d0/2318d0b6c7cf0c4ccc30062dbfba8f01.jpg" alt="User Avatar">
+            <div style="margin-top: 10px; text-align: center;">
+                <h2 style="color: #5d5c5c;">Kafiya Nuril</h2>
+                <p>User</p>
+                <p style="color: green;">active</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.6/dist/htmx.min.js" integrity="sha384-Akqfrbj/HpNVo8k11SXBb6TlBWmXXlYQrCSqEWmyKJe+hDm3Z/B2WVG4smwBkRVm" crossorigin="anonymous"></script>
+</body>
+</html>
